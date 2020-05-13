@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
 
     public float moveSpeed = 5f;
+    public Animator animator; 
     private bool teleport;
     public Rigidbody2D rb;
     Vector2 movement;
@@ -22,7 +23,7 @@ public class Movement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-
+        animator.SetFloat("Speed", Mathf.Abs(movement.x));
 
         if (teleport && Input.GetKeyDown(KeyCode.E))
         {
