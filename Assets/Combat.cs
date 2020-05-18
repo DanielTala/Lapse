@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-    public enum weapons { Sword, Dagger, Broadsword };    
+    public enum weapons { Sword, Dagger, Broadsword };
     public enum directions { up, down, left, right };
 
 
@@ -14,7 +14,7 @@ public class Combat : MonoBehaviour
     public float range;
     [Range(1f, 10f)]
     public float attacksPerSecond;
-    private  float attackCooldown;
+    private float attackCooldown;
 
     public weapons selectedWeapon;
     private weapons currentWeapon;
@@ -27,7 +27,7 @@ public class Combat : MonoBehaviour
             {
                 damage = 8f;
                 range = 4f;
-                attacksPerSecond =2f;
+                attacksPerSecond = 2f;
                 currentWeapon = selectedWeapon;
             }
             if (selectedWeapon == weapons.Dagger)
@@ -46,7 +46,7 @@ public class Combat : MonoBehaviour
             }
         }
     }
-     void Start()
+    void Start()
     {
 
         WeaponChange();
@@ -79,27 +79,21 @@ public class Combat : MonoBehaviour
                 Debug.Log("Target Position: " + hit.transform.position);
                 hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
             }
-            else
+            ray = new Ray2D(transform.position, dir + Vector2.up * 2);
+            hit = Physics2D.Raycast(ray.origin, ray.direction, range);
+            Debug.DrawRay(transform.position, dir + Vector2.up * 2, Color.red, 0.1f);
+            if (hit.collider != null && hit.collider.gameObject.name == "Melee")
             {
-                ray = new Ray2D(transform.position, dir + Vector2.up * 2);
-                hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-                Debug.DrawRay(transform.position, dir + Vector2.up * 2, Color.red, 0.1f);
-                if (hit.collider != null && hit.collider.gameObject.name == "Melee")
-                {
-                    Debug.Log("Target Position: " + hit.transform.position);
-                    hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
-                }
-                else
-                {
-                    ray = new Ray2D(transform.position, dir + Vector2.down * 2);
-                    hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-                    Debug.DrawRay(transform.position, dir + Vector2.down * 2, Color.red, 0.1f);
-                    if (hit.collider != null && hit.collider.gameObject.name == "Melee")
-                    {
-                        Debug.Log("Target Position: " + hit.transform.position);
-                        hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
-                    }
-                }
+                Debug.Log("Target Position: " + hit.transform.position);
+                hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+            }
+            ray = new Ray2D(transform.position, dir + Vector2.down * 2);
+            hit = Physics2D.Raycast(ray.origin, ray.direction, range);
+            Debug.DrawRay(transform.position, dir + Vector2.down * 2, Color.red, 0.1f);
+            if (hit.collider != null && hit.collider.gameObject.name == "Melee")
+            {
+                Debug.Log("Target Position: " + hit.transform.position);
+                hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
             }
 
 
