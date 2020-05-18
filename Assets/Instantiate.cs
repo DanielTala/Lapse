@@ -12,7 +12,10 @@ public class Instantiate : MonoBehaviour
     public float AttackRadius;
     private float timeBtwShots;
     public float startTimeBtwShots;
-
+    private float variable;
+    private float handle;
+    private float handle1;
+    private bool flag;
     private void Start()
     {
 
@@ -21,23 +24,36 @@ public class Instantiate : MonoBehaviour
     void Update()
     {
 
+        handle1 = Input.GetAxisRaw("Horizontal");
+        handle = Input.GetAxisRaw("Vertical");
 
-        if (timeBtwShots <= 0)
+        if (handle1 == 1 || handle == -1)
         {
+            flag = true;
+        }
+        else
+        {
+            flag = false;
+        }
+
+        if (flag == false)
+        {
+            variable = 90f;
+        }
+        else
+        {
+            variable = 0f;
+        }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-
                 Shoot();
-
-
             }
-        }
 
     }
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f,0f, variable));
     }
 }
