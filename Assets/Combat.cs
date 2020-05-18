@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//When running the game, you can freely change stats for each variable but for them to remain you must input the same values inside <WeaponChange()>
+//<WeaponChange()> only runs when the selected weapon is not the same as the current weapon, which is why I made the player start with None.
 public class Combat : MonoBehaviour
 {
-    public enum weapons { Sword, Dagger, Broadsword };
+    public enum weapons { None,Sword, Dagger, Broadsword };
     public enum directions { up, down, left, right };
-
-
     [Range(1f, 20f)]
     public float damage;
     [Range(1f, 10f)]
@@ -15,7 +14,6 @@ public class Combat : MonoBehaviour
     [Range(1f, 10f)]
     public float attacksPerSecond;
     private float attackCooldown;
-
     public weapons selectedWeapon;
     private weapons currentWeapon;
     public directions attackDirection;
@@ -48,7 +46,6 @@ public class Combat : MonoBehaviour
     }
     void Start()
     {
-
         WeaponChange();
         attackCooldown = 1f / attacksPerSecond;
     }
@@ -56,8 +53,6 @@ public class Combat : MonoBehaviour
     {
         attackCooldown -= Time.deltaTime;
         WeaponChange();
-
-
 
         if (Input.GetKey(KeyCode.Space) && attackCooldown <= 0)
         {
@@ -74,7 +69,7 @@ public class Combat : MonoBehaviour
             Ray2D ray = new Ray2D(transform.position, dir);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, range);
             Debug.DrawRay(transform.position, dir, Color.red, 0.1f);
-            if (hit.collider != null && hit.collider.gameObject.name == "Melee")
+            if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
             {
                 Debug.Log("Target Position: " + hit.transform.position);
                 hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
@@ -82,7 +77,7 @@ public class Combat : MonoBehaviour
             ray = new Ray2D(transform.position, dir + Vector2.up * 2);
             hit = Physics2D.Raycast(ray.origin, ray.direction, range);
             Debug.DrawRay(transform.position, dir + Vector2.up * 2, Color.red, 0.1f);
-            if (hit.collider != null && hit.collider.gameObject.name == "Melee")
+            if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
             {
                 Debug.Log("Target Position: " + hit.transform.position);
                 hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
@@ -90,13 +85,11 @@ public class Combat : MonoBehaviour
             ray = new Ray2D(transform.position, dir + Vector2.down * 2);
             hit = Physics2D.Raycast(ray.origin, ray.direction, range);
             Debug.DrawRay(transform.position, dir + Vector2.down * 2, Color.red, 0.1f);
-            if (hit.collider != null && hit.collider.gameObject.name == "Melee")
+            if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
             {
                 Debug.Log("Target Position: " + hit.transform.position);
                 hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
             }
-
-
 
             GetComponent<Animator>().Play("Player_Attacking", 0, 0f);
             attackCooldown = 1f / attacksPerSecond;

@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 314324609}
   m_Layer: 0
   m_Name: Melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 331415605}
   m_Layer: 0
   m_Name: Melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,9 +1364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5450db9f51b26b54386413e4e5b9ab09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
-  range: 4
-  attacksPerSecond: 2
+  damage: 1
+  range: 1
+  attacksPerSecond: 1
   selectedWeapon: 0
   attackDirection: 2
 --- !u!95 &442372814
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 539904637}
   m_Layer: 0
   m_Name: Melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4330,7 +4330,7 @@ GameObject:
   - component: {fileID: 1666684613}
   m_Layer: 0
   m_Name: Melee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
