@@ -1273,7 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  stoppingDistance: 2
+  stoppingDistance: 3
   chaseRadius: 9
   retreatRadius: 0
   damage: 2
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  stoppingDistance: 2
+  stoppingDistance: 3
   chaseRadius: 9
   retreatRadius: 0
   damage: 2
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  stoppingDistance: 2
+  stoppingDistance: 3
   chaseRadius: 9
   retreatRadius: 0
   damage: 2
@@ -5187,7 +5187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  stoppingDistance: 2
+  stoppingDistance: 3
   chaseRadius: 9
   retreatRadius: 0
   damage: 2
