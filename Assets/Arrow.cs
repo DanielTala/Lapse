@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     public float speed = 20f;
     public Rigidbody2D rb;
+    public float damage =1;
 
     private Transform target;
 
@@ -24,6 +25,14 @@ public class Arrow : MonoBehaviour
     void Update()
     {
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Combat>().Health -= damage;
+            Destroy(gameObject);
+        }
     }
 
 

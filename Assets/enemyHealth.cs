@@ -9,15 +9,17 @@ using UnityEngine;
 public class enemyHealth : MonoBehaviour
 {
     public GameObject bar;
+    private Vector3 initial;
     public float health;
     private float maxhealth;
     private void Start()
     {
         maxhealth = health;
+        initial = bar.transform.localScale;
     }
     void Update()
     {
-        bar.transform.localScale = new Vector3(1f*(health/maxhealth), bar.transform.localScale.y, bar.transform.localScale.z);
+        bar.transform.localScale = new Vector3(initial.x * (health / maxhealth), initial.y, initial.z);
         if (health <= 0)
             Destroy(gameObject);
     }
