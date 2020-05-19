@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage 1.unity
     guid: f5b5d05b9a696b143a1f07f782e5d76a
+  - enabled: 1
+    path: Assets/Scenes/Testing.unity
+    guid: 6ee28b06d18265a4c9ec7358c91185f9
+  - enabled: 1
+    path: Assets/Scenes/Tilemap Combat.unity
+    guid: 819d79811c23add46be96223ec2fc197
+  - enabled: 1
+    path: Assets/Scenes/Tilemap Tower.unity
+    guid: 0cce181f08635d0478a85e1fa8ec9379
+  - enabled: 1
+    path: Assets/Scenes/Wizard Interaction.unity
+    guid: 54b3243bb8f70d747a0204fe3167b151
   m_configObjects: {}
