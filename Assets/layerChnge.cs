@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Since not all trees are the same size, just edit the offset variable until you get the right behavior
 public class layerChnge : MonoBehaviour
 {
     Transform target;
