@@ -7,7 +7,13 @@ public class Interaction : MonoBehaviour
 
     
     public Transform boxSpawn;
+
     public GameObject dialogueBox;
+    public GameObject shopButton;
+    public GameObject exitButton;
+    public GameObject nextButton;
+
+    public Dialogue dialogue;
    
     private bool dialogueBoxIsActive = false;
     private bool playerInRange = false;
@@ -20,6 +26,7 @@ public class Interaction : MonoBehaviour
         {
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;
+            TriggerDialogue();
         }
 
         if (dialogueBoxIsActive)
@@ -44,6 +51,12 @@ public class Interaction : MonoBehaviour
         {
             playerInRange = false;          
         }
+    }
+
+
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
     

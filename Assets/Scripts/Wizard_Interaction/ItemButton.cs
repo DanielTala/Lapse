@@ -5,35 +5,54 @@ using UnityEngine;
 public class ItemButton : MonoBehaviour
 {
 
-    public GameObject weaponsInfo;
-    public GameObject consumablesInfo;
+    public GameObject sAndSInfo;
+    public GameObject broadswordInfo;
+    public GameObject daggerInfo;
 
-    public void WeaponClicked()
+    public void SAndSClicked()
     {
-        weaponsInfo.SetActive(true);
+        sAndSInfo.SetActive(true);
+    }
+
+    public void BroadswordClicked()
+    {
+        broadswordInfo.SetActive(true);
+    }
+
+    public void DaggerClicked()
+    {
+        daggerInfo.SetActive(true);
+    }
+
+    public void SAndSPurchased()
+    {
+        Debug.Log("Item purchased!");
+    }
+
+    public void BroadswordPurchased()
+    {
+        Debug.Log("Item purchase");
+    }
+
+    public void DaggerPurchased()
+    {
+        Debug.Log("Item purchase");
+    }
+
+    public void SAndSCanceled()
+    {
+        sAndSInfo.SetActive(false);
+    }
+
+    public void BroadswordCanceled()
+    {
+        broadswordInfo.SetActive(false);
+    }
+
+    public void DaggerCanceled()
+    {
+        daggerInfo.SetActive(false);
     }
     
-    public void WeaponPurchase()
-    {
-        Debug.Log("Weapon has been purchased!");
-    }
-
-    public void WeaponCancel()
-    {       
-        weaponsInfo.SetActive(false);
-    }
-    public void ConsumableCancel()
-    {       
-        consumablesInfo.SetActive(false);
-    }
-
-    public void ConumableClicked()
-    {
-        consumablesInfo.SetActive(true);
-    }
-
-    public void ConsumablePurchase()
-    {
-        Debug.Log("Consumable has been purchased!");
-    }
+    
 }
