@@ -13,6 +13,8 @@ public class Combat : MonoBehaviour
     public float range;
     [Range(1f, 10f)]
     public float attacksPerSecond;
+    [Range(0f, 90f)]
+    public float attackSpread;
     private float attackCooldown;
     public weapons selectedWeapon;
     private weapons currentWeapon;
@@ -32,6 +34,7 @@ public class Combat : MonoBehaviour
                 damage = 8f;
                 range = 4f;
                 attacksPerSecond = 1.5f;
+                attackSpread = 45f;
                 currentWeapon = selectedWeapon;
             }
             if (selectedWeapon == weapons.Dagger)
@@ -39,6 +42,7 @@ public class Combat : MonoBehaviour
                 damage = 5f;
                 range = 3f;
                 attacksPerSecond = 2f;
+                attackSpread = 30f;
                 currentWeapon = selectedWeapon;
             }
             if (selectedWeapon == weapons.Broadsword)
@@ -46,6 +50,7 @@ public class Combat : MonoBehaviour
                 damage = 14f;
                 range = 6f;
                 attacksPerSecond = 1f;
+                attackSpread = 60f;
                 currentWeapon = selectedWeapon;
             }
         }
@@ -69,6 +74,8 @@ public class Combat : MonoBehaviour
             dir = -transform.right * range;
         if (attackDirection == directions.right)
             dir = transform.right * range;
+        Vector3 leftRayRotation = Quaternion.AngleAxis(-attackSpread, transform.forward) * dir;
+        Vector3 rightRayRotation = Quaternion.AngleAxis(attackSpread, transform.forward) *dir;
         Ray2D ray = new Ray2D(transform.position, dir);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, range);
         Debug.DrawRay(transform.position, dir, Color.red, 0.1f);
@@ -77,22 +84,26 @@ public class Combat : MonoBehaviour
             Debug.Log("Target Position: " + hit.transform.position);
             hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
         }
-        ray = new Ray2D(transform.position, dir + Vector2.up * 2);
+        ray = new Ray2D(transform.position, leftRayRotation);
         hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, dir + Vector2.up * 2, Color.red, 0.1f);
+        Debug.DrawRay(transform.position, leftRayRotation, Color.red, 0.1f);
         if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
         {
             Debug.Log("Target Position: " + hit.transform.position);
             hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
         }
-        ray = new Ray2D(transform.position, dir + Vector2.down * 2);
+        ray = new Ray2D(transform.position, rightRayRotation);
         hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, dir + Vector2.down * 2, Color.red, 0.1f);
+        Debug.DrawRay(transform.position, rightRayRotation, Color.red, 0.1f);
         if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
         {
             Debug.Log("Target Position: " + hit.transform.position);
             hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
         }
+
+
+
+
     }
     void Update()
     {
