@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    private float currentTime = 0f;
+    private static float currentTime = 0f;
     public float startingTime = 60f;
     private string scene;
    
@@ -29,6 +29,7 @@ public class Timer : MonoBehaviour
             currentTime -= 1 * Time.deltaTime;
             countdownText.text = currentTime.ToString("0");
         }
+
     }
 
 

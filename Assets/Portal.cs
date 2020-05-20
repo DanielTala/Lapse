@@ -13,7 +13,8 @@ public class Portal : MonoBehaviour
     {
         if (portal==true && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(3);
+           
+            SceneManager.LoadScene(1);
         }
 
     }

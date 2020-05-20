@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject exitButton;
     public GameObject nextButton;
 
+    public GameObject portal;
+
     private void Start()
     {
         sentences = new Queue<string>();
@@ -44,8 +46,10 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+
         shopButton.SetActive(true);
         nextButton.SetActive(false);
         exitButton.SetActive(true);
+        portal.SetActive(true);
     }
 }

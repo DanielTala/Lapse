@@ -9,6 +9,8 @@ TagManager:
   - Arrow
   - P_Attack
   - Enemy
+  - DialogueBox
+  - Timer
   layers:
   - Default
   - TransparentFX
