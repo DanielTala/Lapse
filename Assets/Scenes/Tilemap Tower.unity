@@ -6653,7 +6653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10649c60363dd6f4da862be113a980fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 60
   countdownText: {fileID: 2085734809}
 --- !u!4 &809837832
 Transform:
@@ -6827,7 +6826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &813004706
 CircleCollider2D:
   m_ObjectHideFlags: 0
