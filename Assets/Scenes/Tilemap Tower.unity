@@ -285,6 +285,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8424308121528394992, guid: 151cef52db5c60d4ca61da4848ad5c13,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 11.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424308121528394992, guid: 151cef52db5c60d4ca61da4848ad5c13,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 8.58
+      objectReference: {fileID: 0}
     - target: {fileID: 8424308121528394995, guid: 151cef52db5c60d4ca61da4848ad5c13,
         type: 3}
       propertyPath: m_Name
@@ -5115,7 +5125,7 @@ Transform:
   m_GameObject: {fileID: 338812825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.24, y: 2.55, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2041, y: 1.2041, z: 1.2041}
   m_Children:
   - {fileID: 737195616}
   - {fileID: 2144784794}
