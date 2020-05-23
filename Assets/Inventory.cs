@@ -16,9 +16,9 @@ public class Inventory : MonoBehaviour
         {
             HPCount++;
             HPDisp.gameObject.SetActive(true);
+            FindObjectOfType<Timer>().currentTime -= 2;
         }
         HPText.text = HPCount.ToString();
-        FindObjectOfType<Timer>().currentTime -= 2;
     }
     public void consumeHPPotion()
     {
@@ -39,9 +39,9 @@ public class Inventory : MonoBehaviour
         {
             SPCount++;
             SPDisp.gameObject.SetActive(true);
+            FindObjectOfType<Timer>().currentTime -= 5;
         }
         SPText.text = SPCount.ToString();
-        FindObjectOfType<Timer>().currentTime -= 5;
     }
     public void consumeSPPotion()
     {

@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             GetComponent<Animator>().SetInteger("state", 1);
-        else
+        else 
             GetComponent<Animator>().SetInteger("state", 0);
         if (movement.x > 0)
         {

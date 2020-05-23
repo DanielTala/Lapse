@@ -22,6 +22,8 @@ public class Combat : MonoBehaviour
     public Animator animator;
     public AnimatorOverrideController NoWeapon, Sword, SwordShield,Dagger,BroadSword;
     public Motion[] motions;
+    public bool blocking;
+
 
     public GameObject bar;
     public Vector3 initial;
@@ -110,6 +112,7 @@ public class Combat : MonoBehaviour
     }
     void Start()
     {
+        blocking = false;
         currentWeapon = weapons.None;
         WeaponChange();
         attackCooldown = 1f / attacksPerSecond;
@@ -185,6 +188,19 @@ public class Combat : MonoBehaviour
         {
             GetComponent<Animator>().Play("Player_Attacking", 0, 0f);
             attackCooldown = 1f / attacksPerSecond;
+        }
+        if(Input.GetKeyDown(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
+            GetComponent<Animator>().Play("Player_BlockingStart", 0, 0f);
+        if (Input.GetKey(KeyCode.LeftControl) &&selectedWeapon == weapons.SwordShield)
+        {
+            Debug.Log("Blocking");
+            GetComponent<Animator>().SetInteger("state", 4);
+            blocking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            GetComponent<Animator>().Play("Player_BlockingEnd", 0, 0f);
+            blocking = false;
         }
         bar.transform.localScale = new Vector3(initial.x * (Health / maxhealth), initial.y, initial.z);
         if (Health <= 0)
