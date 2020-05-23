@@ -18,7 +18,6 @@ public class Interaction : MonoBehaviour
     private bool dialogueBoxIsActive = false;
     private bool playerInRange = false;
 
-
     void Update()
     {
        

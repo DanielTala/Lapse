@@ -7,9 +7,11 @@ public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     private bool teleport;
     public Rigidbody2D rb;
+    public bool boost;
+    public float boostCountdown;
     Vector2 movement;
     void Start()
     {
@@ -45,7 +47,15 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed);
+        if (boost == false)
+            rb.MovePosition(rb.position + movement * moveSpeed);
+        else
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * 2f);
+            boostCountdown -= Time.deltaTime;
+            if (boostCountdown <= 0)
+                boost = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
