@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Assets/2Combat Area/Materials.meta
-guid: 67f77cfbd0ffca84486d0e2a59f20859
-=======
-guid: 2b531941ac8f38f469e45f3c899bbf9c
->>>>>>> 2c8ee4fbed68488f7037eb3734b4fe897dcb6d5e:Assets/Assets/Animation/Hero/DefaultWeapon.meta
+guid: 0c0e7d88482006247ae6d2ab36d3f24b
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
