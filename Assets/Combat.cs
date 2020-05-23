@@ -75,7 +75,9 @@ public class Combat : MonoBehaviour
         if (attackDirection == directions.right)
             dir = transform.right * range;
         Vector3 leftRayRotation = Quaternion.AngleAxis(-attackSpread, transform.forward) * dir;
+        Vector3 leftMidRayRotation = Quaternion.AngleAxis(-attackSpread/2, transform.forward) * dir;
         Vector3 rightRayRotation = Quaternion.AngleAxis(attackSpread, transform.forward) *dir;
+        Vector3 rightMidRayRotation = Quaternion.AngleAxis(attackSpread/2, transform.forward) *dir;
         Ray2D ray = new Ray2D(transform.position, dir);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, range);
         Debug.DrawRay(transform.position, dir, Color.red, 0.1f);
@@ -92,9 +94,25 @@ public class Combat : MonoBehaviour
             Debug.Log("Target Position: " + hit.transform.position);
             hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
         }
+        ray = new Ray2D(transform.position, leftMidRayRotation);
+        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
+        Debug.DrawRay(transform.position, leftMidRayRotation, Color.red, 0.1f);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Target Position: " + hit.transform.position);
+            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+        }
         ray = new Ray2D(transform.position, rightRayRotation);
         hit = Physics2D.Raycast(ray.origin, ray.direction, range);
         Debug.DrawRay(transform.position, rightRayRotation, Color.red, 0.1f);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Target Position: " + hit.transform.position);
+            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+        }
+        ray = new Ray2D(transform.position, rightMidRayRotation);
+        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
+        Debug.DrawRay(transform.position, rightMidRayRotation, Color.red, 0.1f);
         if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
         {
             Debug.Log("Target Position: " + hit.transform.position);

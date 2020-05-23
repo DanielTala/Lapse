@@ -27,7 +27,7 @@ public class EnemyFinder : MonoBehaviour
 
             if (timer >=4f)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                SceneManager.LoadScene(2);
             }
         }
     }

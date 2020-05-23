@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - DialogueBox
   - Timer
+  - Spawn
   layers:
   - Default
   - TransparentFX
