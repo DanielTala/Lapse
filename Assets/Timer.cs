@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    private static float currentTime = 0f;
-    public static float startingTime = 60f;
+    public  float currentTime = 0f;
+    public  float startingTime = 60f;
     private string scene;
    
     [SerializeField] Text countdownText;
@@ -25,13 +25,13 @@ public class Timer : MonoBehaviour
     {
        scene = SceneManager.GetActiveScene().name;
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
+        countdownText.text = currentTime.ToString("0");
 
         if (scene == "Tilemap Combat" && objects.Length!=0)
         {
             currentTime -= 1 * Time.deltaTime;
-            countdownText.text = currentTime.ToString("0");
         }
-        if (objects.Length==0)
+        if (scene == "Tilemap Combat" && objects.Length==0)
         {
             startingTime = currentTime;
         }
