@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tilemap Combat.unity
     guid: 819d79811c23add46be96223ec2fc197
+  - enabled: 1
+    path: Assets/Scenes/Tilemap Tower(Stage).unity
+    guid: c5237c7ba0816ae4ebaaeb30e5fab4f5
   m_configObjects: {}

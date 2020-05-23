@@ -244,6 +244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -4241,6 +4246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -4838,6 +4848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Melee (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
@@ -5912,6 +5927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -6051,6 +6071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Melee (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
@@ -12367,6 +12392,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -13309,6 +13339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -14040,12 +14075,12 @@ PrefabInstance:
     - target: {fileID: 7490830902584265073, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.399368
+      value: -36.7
       objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265073, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.038511753
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265073, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
@@ -15015,6 +15050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -15510,6 +15550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
       propertyPath: m_SortingOrder
@@ -15649,6 +15694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Melee (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490830902584265101, guid: 91f43a08bfee05444a919af906985391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7490830902584265102, guid: 91f43a08bfee05444a919af906985391,
         type: 3}
