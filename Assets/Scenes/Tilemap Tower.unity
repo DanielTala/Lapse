@@ -1877,6 +1877,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5678885
       objectReference: {fileID: 0}
+    - target: {fileID: 8424308121528395006, guid: 151cef52db5c60d4ca61da4848ad5c13,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8424308121528395007, guid: 151cef52db5c60d4ca61da4848ad5c13,
         type: 3}
       propertyPath: m_SortingOrder
