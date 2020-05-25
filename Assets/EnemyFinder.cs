@@ -8,9 +8,11 @@ public class EnemyFinder : MonoBehaviour
     // Start is called before the first frame update
     public GameObject win;
     private float timer;
+
+    private Portal portal;
     void Start()
     {
-
+        portal = GameObject.FindObjectOfType<Portal>();
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class EnemyFinder : MonoBehaviour
 
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
         
-
+Debug.Log(SceneManager.GetActiveScene().buildIndex);
         if(objects.Length==0)
         {
             win.SetActive(true);
@@ -29,6 +31,13 @@ public class EnemyFinder : MonoBehaviour
             {
                 SceneManager.LoadScene(2);
             }
+            
+            if (SceneManager.GetActiveScene().buildIndex==1)
+            {
+                portal.Stage1Finish();
+            }
+
+          
         }
     }
 }

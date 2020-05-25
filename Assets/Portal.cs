@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     // Start is called before the first frame update
 
     private bool portal;
+    public bool stage1f;
 
     private void Update()
     {
@@ -15,6 +16,11 @@ public class Portal : MonoBehaviour
         {
            
             SceneManager.LoadScene(1);
+        }
+        if (portal == true && Input.GetKeyDown(KeyCode.E) && stage1f==true)
+        {
+
+            SceneManager.LoadScene(3);
         }
 
     }
@@ -32,5 +38,10 @@ public class Portal : MonoBehaviour
         {
             portal = false;
         }
+    }
+
+    public void Stage1Finish()
+    {
+        stage1f = true;
     }
 }

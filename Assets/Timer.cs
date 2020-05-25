@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 
     public  float currentTime = 0f;
     public  float startingTime = 60f;
-    private string scene;
+    private int scene;
    
     [SerializeField] Text countdownText;
     // Start is called before the first frame update
@@ -23,19 +23,22 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       scene = SceneManager.GetActiveScene().name;
+       scene = SceneManager.GetActiveScene().buildIndex;
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
         countdownText.text = currentTime.ToString("0");
 
-        if (scene == "Tilemap Combat" && objects.Length!=0)
+        if (scene == 1 && objects.Length!=0)
         {
             currentTime -= 1 * Time.deltaTime;
         }
-        if (scene == "Tilemap Combat" && objects.Length==0)
+        if (scene == 1 && objects.Length==0)
         {
             startingTime = currentTime;
         }
-
+        if (scene == 3 && objects.Length != 0)
+        {
+            currentTime -= 1 * Time.deltaTime;
+        }
     }
 
 
