@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
             rb.MovePosition(rb.position + movement * moveSpeed);
         else
         {
-            rb.MovePosition(rb.position + movement * moveSpeed * 2f);
+            rb.MovePosition(rb.position + movement * moveSpeed * 1.3f);
             boostCountdown -= Time.deltaTime;
             if (boostCountdown <= 0)
                 boost = false;
