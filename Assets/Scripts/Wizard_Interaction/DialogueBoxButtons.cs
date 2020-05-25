@@ -18,7 +18,9 @@ public class DialogueBoxButtons : MonoBehaviour
     {
         wizardShop.SetActive(true);
         dialogueBox.SetActive(false);
-        
+        shopButton.SetActive(false);
+        exitButton.SetActive(false);
+        nextButton.SetActive(true);
     }
 
     public void ExitButton()

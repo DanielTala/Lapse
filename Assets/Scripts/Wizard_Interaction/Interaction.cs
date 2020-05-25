@@ -12,6 +12,7 @@ public class Interaction : MonoBehaviour
     public GameObject shopButton;
     public GameObject exitButton;
     public GameObject nextButton;
+    public GameObject welcomeMessage;
 
     public Dialogue dialogue;
    
@@ -25,6 +26,7 @@ public class Interaction : MonoBehaviour
         {
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;
+            welcomeMessage.SetActive(false);
             TriggerDialogue();
         }
 
