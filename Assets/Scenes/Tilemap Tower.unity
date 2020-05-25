@@ -1767,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: 442372813, guid: 151cef52db5c60d4ca61da4848ad5c13, type: 3}
       propertyPath: BroadSword
       value: 
-      objectReference: {fileID: 22100000, guid: 8bbd3d966c7795241b763ce51e46d9fd,
+      objectReference: {fileID: 22100000, guid: 5c43467c6019b6d45bd2fdd2823bbf4d,
         type: 2}
     - target: {fileID: 442372814, guid: 151cef52db5c60d4ca61da4848ad5c13, type: 3}
       propertyPath: m_Controller

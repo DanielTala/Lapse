@@ -10,7 +10,7 @@ public class enemyHealth : MonoBehaviour
 {
     public GameObject bar;
     private Vector3 initial;
-    public float health;
+    public float health, damageImmunity;
     private float maxhealth;
     private void Start()
     {
@@ -19,6 +19,7 @@ public class enemyHealth : MonoBehaviour
     }
     void Update()
     {
+        damageImmunity -= Time.deltaTime;
         bar.transform.localScale = new Vector3(initial.x * (health / maxhealth), initial.y, initial.z);
         if (health <= 0)
             Destroy(gameObject);

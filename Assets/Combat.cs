@@ -14,7 +14,9 @@ public class Combat : MonoBehaviour
     [Range(1f, 10f)]
     public float attacksPerSecond;
     [Range(0f, 90f)]
-    public float attackSpread;
+    public float topAngle;
+    [Range(-90f, 0f)]
+    public float bottomAngle;
     private float attackCooldown;
     public weapons selectedWeapon;
     private weapons currentWeapon;
@@ -23,7 +25,7 @@ public class Combat : MonoBehaviour
     public AnimatorOverrideController NoWeapon, Sword, SwordShield,Dagger,BroadSword;
     public Motion[] motions;
     public bool blocking;
-
+    public int layer_mask;
 
     public GameObject bar;
     public Vector3 initial;
@@ -55,7 +57,7 @@ public class Combat : MonoBehaviour
         if (index == 4)
         {
             selectedWeapon = weapons.Broadsword;
-            timer.currentTime -=  25f;
+            timer.currentTime -=  30f;
         }
     }
 
@@ -68,16 +70,18 @@ public class Combat : MonoBehaviour
                 damage = 1f;
                 range = 1f;
                 attacksPerSecond = 1f;
-                attackSpread = 0f;
+                topAngle = 0f;
+                bottomAngle = 0f;
                 currentWeapon = selectedWeapon;
                 animator.runtimeAnimatorController = NoWeapon;
             }
             if (selectedWeapon == weapons.Sword)
             {
-                damage = 8f;
+                damage = 8.5f;
                 range = 4f;
-                attacksPerSecond = 1.5f;
-                attackSpread = 45f;
+                attacksPerSecond = 2f;
+                topAngle = 20f;
+                bottomAngle = -45f;
                 currentWeapon = selectedWeapon;
                 animator.runtimeAnimatorController = Sword;
             }
@@ -86,7 +90,8 @@ public class Combat : MonoBehaviour
                 damage = 8f;
                 range = 4f;
                 attacksPerSecond = 1.5f;
-                attackSpread = 45f;
+                topAngle = 20f;
+                bottomAngle = -45f;
                 currentWeapon = selectedWeapon;
                 animator.runtimeAnimatorController = SwordShield;
             }
@@ -95,7 +100,8 @@ public class Combat : MonoBehaviour
                 damage = 5f;
                 range = 3f;
                 attacksPerSecond = 2f;
-                attackSpread = 30f;
+                topAngle = 30f;
+                bottomAngle = -30f;
                 currentWeapon = selectedWeapon;
                 animator.runtimeAnimatorController = SwordShield;
             }
@@ -104,14 +110,16 @@ public class Combat : MonoBehaviour
                 damage = 14f;
                 range = 6f;
                 attacksPerSecond = 1f;
-                attackSpread = 60f;
+                topAngle = 20f;
+                bottomAngle = -60f;
                 currentWeapon = selectedWeapon;
-                animator.runtimeAnimatorController = SwordShield;
+                animator.runtimeAnimatorController = BroadSword;
             }
         }
     }
     void Start()
     {
+        layer_mask = LayerMask.GetMask("Enemies");
         blocking = false;
         currentWeapon = weapons.None;
         WeaponChange();
@@ -120,7 +128,7 @@ public class Combat : MonoBehaviour
         initial = bar.transform.localScale;
         animator = GetComponent<Animator>();
     }
-    public void Attack()
+    void attackRay(Vector3 rotationValue)
     {
         Vector2 dir = Vector2.zero; ;
         if (attackDirection == directions.up)
@@ -131,50 +139,67 @@ public class Combat : MonoBehaviour
             dir = -transform.right * range;
         if (attackDirection == directions.right)
             dir = transform.right * range;
-        Vector3 leftRayRotation = Quaternion.AngleAxis(-attackSpread, transform.forward) * dir;
-        Vector3 leftMidRayRotation = Quaternion.AngleAxis(-attackSpread / 2, transform.forward) * dir;
-        Vector3 rightRayRotation = Quaternion.AngleAxis(attackSpread, transform.forward) * dir;
-        Vector3 rightMidRayRotation = Quaternion.AngleAxis(attackSpread / 2, transform.forward) * dir;
-        Ray2D ray = new Ray2D(transform.position, dir);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, dir, Color.red, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+        float displayTime = 0.5f;
+        Ray2D ray = new Ray2D(transform.position, rotationValue);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, range, layer_mask);
+        Debug.DrawRay(transform.position, rotationValue, Color.red, displayTime);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy" && hit.collider.gameObject.GetComponent<enemyHealth>().damageImmunity < 0)
         {
             Debug.Log("Target Position: " + hit.transform.position);
             hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+            hit.collider.gameObject.GetComponent<enemyHealth>().damageImmunity = attackCooldown;
         }
-        ray = new Ray2D(transform.position, leftRayRotation);
-        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, leftRayRotation, Color.red, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+    }
+    public void Attack()
+    {
+        Vector2 dir = Vector2.zero; ;
+        if (attackDirection == directions.up)
+            dir = transform.up * range;
+        if (attackDirection == directions.down)
+            dir = -transform.up * range;
+        if (attackDirection == directions.left)
         {
-            Debug.Log("Target Position: " + hit.transform.position);
-            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+            dir = -transform.right * range;
+            Vector3 left5RayRotation = Quaternion.AngleAxis(-bottomAngle * (4f / 4f), transform.forward) * dir;
+            Vector3 left3RayRotation = Quaternion.AngleAxis(-bottomAngle * (2f / 4f), transform.forward) * dir;
+            Vector3 left2RayRotation = Quaternion.AngleAxis(-bottomAngle * (1f / 4f), transform.forward) * dir;
+            Vector3 left4RayRotation = Quaternion.AngleAxis(-bottomAngle * (3f / 4f), transform.forward) * dir;
+            Vector3 right5RayRotation = Quaternion.AngleAxis(-topAngle * (4f / 4f), transform.forward) * dir;
+            Vector3 right3RayRotation = Quaternion.AngleAxis(-topAngle * (2f / 4f), transform.forward) * dir;
+            Vector3 right2RayRotation = Quaternion.AngleAxis(-topAngle * (1f / 4f), transform.forward) * dir;
+            Vector3 right4RayRotation = Quaternion.AngleAxis(-topAngle * (3f / 4f), transform.forward) * dir;
+            attackRay(dir);
+            attackRay(left2RayRotation);
+            attackRay(left3RayRotation);
+            attackRay(left4RayRotation);
+            attackRay(left5RayRotation);
+            attackRay(right2RayRotation);
+            attackRay(right3RayRotation);
+            attackRay(right4RayRotation);
+            attackRay(right5RayRotation);
         }
-        ray = new Ray2D(transform.position, leftMidRayRotation);
-        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, leftMidRayRotation, Color.red, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+        if (attackDirection == directions.right)
         {
-            Debug.Log("Target Position: " + hit.transform.position);
-            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
+            dir = transform.right * range;
+            Vector3 left5RayRotation = Quaternion.AngleAxis(bottomAngle * (4f / 4f), transform.forward) * dir;
+            Vector3 left3RayRotation = Quaternion.AngleAxis(bottomAngle * (2f / 4f), transform.forward) * dir;
+            Vector3 left2RayRotation = Quaternion.AngleAxis(bottomAngle * (1f / 4f), transform.forward) * dir;
+            Vector3 left4RayRotation = Quaternion.AngleAxis(bottomAngle * (3f / 4f), transform.forward) * dir;
+            Vector3 right5RayRotation = Quaternion.AngleAxis(topAngle * (4f / 4f), transform.forward) * dir;
+            Vector3 right3RayRotation = Quaternion.AngleAxis(topAngle * (2f / 4f), transform.forward) * dir;
+            Vector3 right2RayRotation = Quaternion.AngleAxis(topAngle * (1f / 4f), transform.forward) * dir;
+            Vector3 right4RayRotation = Quaternion.AngleAxis(topAngle * (3f / 4f), transform.forward) * dir;
+            attackRay(dir);
+            attackRay(left2RayRotation);
+            attackRay(left3RayRotation);
+            attackRay(left4RayRotation);
+            attackRay(left5RayRotation);
+            attackRay(right2RayRotation);
+            attackRay(right3RayRotation);
+            attackRay(right4RayRotation);
+            attackRay(right5RayRotation);
         }
-        ray = new Ray2D(transform.position, rightRayRotation);
-        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, rightRayRotation, Color.red, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Target Position: " + hit.transform.position);
-            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
-        }
-        ray = new Ray2D(transform.position, rightMidRayRotation);
-        hit = Physics2D.Raycast(ray.origin, ray.direction, range);
-        Debug.DrawRay(transform.position, rightMidRayRotation, Color.red, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Target Position: " + hit.transform.position);
-            hit.collider.gameObject.GetComponent<enemyHealth>().health -= damage;
-        }
+
 
 
 
@@ -197,7 +222,7 @@ public class Combat : MonoBehaviour
             GetComponent<Animator>().SetInteger("state", 4);
             blocking = true;
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
         {
             GetComponent<Animator>().Play("Player_BlockingEnd", 0, 0f);
             blocking = false;

@@ -10,7 +10,7 @@ public class Melee : MonoBehaviour
     public float stoppingDistance;
     public float chaseRadius;
     public float retreatRadius;
-    public float damage, damageInterval;
+    public float damage, damageInterval,damageImmunity;
     private float damageCooldown;
     private Transform target;
     void Start()
@@ -44,6 +44,14 @@ public class Melee : MonoBehaviour
         else
             return false;
     }
+    public void attack()
+    {
+        if (Vector2.Distance(transform.position, target.position) <= stoppingDistance && blockCheck() == false)
+        {
+            Debug.DrawLine(transform.position, target.transform.position, Color.red, 0.2f);
+            target.gameObject.GetComponent<Combat>().Health -= damage;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -54,9 +62,8 @@ public class Melee : MonoBehaviour
         }
         if (Vector2.Distance(transform.position, target.position) <= stoppingDistance &&damageCooldown<=0&& blockCheck() == false)
         {
-            Debug.DrawLine(transform.position, target.transform.position, Color.red, 0.2f);
-            target.gameObject.GetComponent<Combat>().Health -= damage;
-            damageCooldown = damageInterval;
+        damageCooldown = damageInterval;
+            GetComponent<Animator>().Play("Slime_Attacking", 0, 0f);
         }
     }
 }
