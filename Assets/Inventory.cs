@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
             if (FindObjectOfType<Movement>().boost == false)
             {
                 FindObjectOfType<Movement>().boost = true;
-                FindObjectOfType<Movement>().boostCountdown = 12f;
+                FindObjectOfType<Movement>().boostCountdown = 10f;
             }
         }
         SPText.text = SPCount.ToString();

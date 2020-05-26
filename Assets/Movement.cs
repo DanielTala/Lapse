@@ -48,10 +48,10 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         if (boost == false)
-            rb.MovePosition(rb.position + movement * moveSpeed);
+            rb.MovePosition(rb.position + movement * moveSpeed*Time.deltaTime);
         else
         {
-            rb.MovePosition(rb.position + movement * moveSpeed * 2f);
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime * 1.5f);
             boostCountdown -= Time.deltaTime;
             if (boostCountdown <= 0)
                 boost = false;

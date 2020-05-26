@@ -56,11 +56,19 @@ public class Melee : MonoBehaviour
     void Update()
     {
         damageCooldown -= Time.deltaTime;
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && Vector2.Distance(transform.position, target.position) <= chaseRadius)
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && Vector2.Distance(transform.position, target.position) <= chaseRadius&&!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Slime_Attacking"))
         {
+            if (target.position.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if (target.position.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        if (Vector2.Distance(transform.position, target.position) <= stoppingDistance &&damageCooldown<=0&& blockCheck() == false)
+        if (Vector2.Distance(transform.position, target.position) <= stoppingDistance &&damageCooldown<=0)
         {
         damageCooldown = damageInterval;
             GetComponent<Animator>().Play("Slime_Attacking", 0, 0f);
