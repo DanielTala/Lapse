@@ -95,9 +95,9 @@ public class ItemButton : MonoBehaviour
             inv.HPCount++;
             inv.HPDisp.gameObject.SetActive(true);
             timer.currentTime -= 2;
+            purchaseDisp.displayPurchase("a Health Potion");
         }
         inv.HPText.text = inv.HPCount.ToString();
-        purchaseDisp.displayPurchase("a Health Potion");
     }
     public void SPPurchased()
     {
@@ -108,9 +108,9 @@ public class ItemButton : MonoBehaviour
             inv.SPCount++;
             inv.SPDisp.gameObject.SetActive(true);
             timer.currentTime -= 5;
+            purchaseDisp.displayPurchase("a Speed Potion");
         }
         inv.SPText.text = inv.SPCount.ToString();
-        purchaseDisp.displayPurchase("a Speed Potion");
     }
 
     public void SAndSCanceled()
