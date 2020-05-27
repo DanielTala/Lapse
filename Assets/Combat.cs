@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //When running the game, you can freely change stats for each variable but for them to remain you must input the same values inside <WeaponChange()>
 //<WeaponChange()> only runs when the selected weapon is not the same as the current weapon, which is why I made the player start with None.
 public class Combat : MonoBehaviour
@@ -32,12 +33,14 @@ public class Combat : MonoBehaviour
     [Range(0f, 100f)]
     public float Health;
     public float maxhealth;
+    public int weaponNumber;
 
     //protected AnimatorOverrideController AOC;
 
     public void WeaponSelect(int index)
     {
         Timer timer = FindObjectOfType<Timer>();
+        weaponNumber = index;
         if (index == 0)
             selectedWeapon = weapons.None;
         if (index == 1)
@@ -47,17 +50,17 @@ public class Combat : MonoBehaviour
         if (index == 2)
         {
             selectedWeapon = weapons.SwordShield;
-            timer.currentTime -= 25f;
+          
         }
         if (index == 3)
         {
             selectedWeapon = weapons.Dagger;
-            timer.currentTime -= 25f;
+         
         }
         if (index == 4)
         {
             selectedWeapon = weapons.Broadsword;
-            timer.currentTime -=  30f;
+
         }
     }
 
@@ -229,8 +232,10 @@ public class Combat : MonoBehaviour
         }
         bar.transform.localScale = new Vector3(initial.x * (Health / maxhealth), initial.y, initial.z);
         if (Health <= 0)
+        {
             Destroy(gameObject);
-
+            SceneManager.LoadScene(0);
+        }
 
     }
 }

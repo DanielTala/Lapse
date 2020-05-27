@@ -8,11 +8,14 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
 
     public float moveSpeed;
+    public bool prespawn;
     private bool teleport;
     public Rigidbody2D rb;
     public bool boost;
     public float boostCountdown;
     Vector2 movement;
+
+    Vector2 moveDirection;
     void Start()
     {
        
@@ -43,6 +46,8 @@ public class Movement : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+
+
     }
 
     private void FixedUpdate()
@@ -55,6 +60,12 @@ public class Movement : MonoBehaviour
             boostCountdown -= Time.deltaTime;
             if (boostCountdown <= 0)
                 boost = false;
+        }
+        GameObject spawn = GameObject.FindGameObjectWithTag("Spawn");
+        if (prespawn == true)
+        {
+            rb.MovePosition(spawn.transform.position);
+            prespawn = false;
         }
     }
 
