@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public  float currentTime = 0f;
     public  float startingTime = 60f;
     private int scene;
+    private float timer;
+    public GameObject lose;
    
     [SerializeField] Text countdownText;
     // Start is called before the first frame update
@@ -38,6 +40,17 @@ public class Timer : MonoBehaviour
         if (scene == 3 && objects.Length != 0)
         {
             currentTime -= 1 * Time.deltaTime;
+        }
+
+        if (currentTime <= 0)
+        {
+            lose.SetActive(true);
+            
+            timer += Time.deltaTime;
+            if (timer >=4f)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 

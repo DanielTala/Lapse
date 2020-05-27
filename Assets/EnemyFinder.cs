@@ -20,13 +20,17 @@ public class EnemyFinder : MonoBehaviour
     {
 
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
-        
-Debug.Log(SceneManager.GetActiveScene().buildIndex);
+
+
+        Movement movement = FindObjectOfType<Movement>();
+
+
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         if(objects.Length==0)
         {
             win.SetActive(true);
             timer += 1 *Time.deltaTime;
-
+            movement.prespawn = true;
             if (timer >=4f)
             {
                 SceneManager.LoadScene(2);
