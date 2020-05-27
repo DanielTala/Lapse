@@ -45,16 +45,15 @@ public class Inventory : MonoBehaviour
     }
     public void consumeSPPotion()
     {
-        if (SPCount > 0)
+        if (SPCount > 0 && FindObjectOfType<Movement>().boost == false)
         {
             SPCount--;
             if (SPCount == 0)
                 SPDisp.gameObject.SetActive(false);
-            if (FindObjectOfType<Movement>().boost == false)
-            {
-                FindObjectOfType<Movement>().boost = true;
-                FindObjectOfType<Movement>().boostCountdown = 10f;
-            }
+
+            FindObjectOfType<Movement>().boost = true;
+            FindObjectOfType<Movement>().boostCountdown = 10f;
+
         }
         SPText.text = SPCount.ToString();
     }

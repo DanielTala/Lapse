@@ -8,6 +8,10 @@ public class ItemButton : MonoBehaviour
     public GameObject sAndSInfo;
     public GameObject broadswordInfo;
     public GameObject daggerInfo;
+    public GameObject HPInfo;
+    public GameObject SPInfo;
+    public FadingNotif purchaseDisp;
+    public Inventory inv;
 
     public void Update()
     {
@@ -29,6 +33,16 @@ public class ItemButton : MonoBehaviour
         daggerInfo.SetActive(true);
     }
 
+    public void HPClicked()
+    {
+        HPInfo.SetActive(true);
+    }
+
+    public void SPClicked()
+    {
+        SPInfo.SetActive(true);
+    }
+
     public void SAndSPurchased()
     {
         Combat combat = FindObjectOfType<Combat>();
@@ -39,6 +53,8 @@ public class ItemButton : MonoBehaviour
             timer.currentTime -= 25f;
             combat.WeaponSelect(2);
         }
+        SAndSCanceled();
+        purchaseDisp.displayPurchase("a Sword and Shield");
     }
 
     public void BroadswordPurchased()
@@ -51,6 +67,8 @@ public class ItemButton : MonoBehaviour
             timer.currentTime -= 30f;
             combat.WeaponSelect(4);
         }
+        BroadswordCanceled();
+        purchaseDisp.displayPurchase("a Broadsword");
     }
 
     public void DaggerPurchased()
@@ -63,6 +81,36 @@ public class ItemButton : MonoBehaviour
             timer.currentTime -= 25f;
             combat.WeaponSelect(3);
         }
+        DaggerCanceled();
+        purchaseDisp.displayPurchase("a Dagger");
+    }
+
+
+    public void HPPurchased()
+    {
+        Timer timer = FindObjectOfType<Timer>();
+        Debug.Log("Item purchase");
+        if (inv.HPCount < 5)
+        {
+            inv.HPCount++;
+            inv.HPDisp.gameObject.SetActive(true);
+            timer.currentTime -= 2;
+        }
+        inv.HPText.text = inv.HPCount.ToString();
+        purchaseDisp.displayPurchase("a Health Potion");
+    }
+    public void SPPurchased()
+    {
+        Timer timer = FindObjectOfType<Timer>();
+        Debug.Log("Item purchase");
+        if (inv.SPCount < 2)
+        {
+            inv.SPCount++;
+            inv.SPDisp.gameObject.SetActive(true);
+            timer.currentTime -= 5;
+        }
+        inv.SPText.text = inv.SPCount.ToString();
+        purchaseDisp.displayPurchase("a Speed Potion");
     }
 
     public void SAndSCanceled()
@@ -79,6 +127,16 @@ public class ItemButton : MonoBehaviour
     {
         daggerInfo.SetActive(false);
     }
-    
-    
+
+    public void HPCanceled()
+    {
+        HPInfo.SetActive(false);
+    }
+
+    public void SPCanceled()
+    {
+        SPInfo.SetActive(false);
+    }
+
+
 }

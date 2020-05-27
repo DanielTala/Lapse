@@ -13,6 +13,7 @@ public class Interaction : MonoBehaviour
     public GameObject exitButton;
     public GameObject nextButton;
     public GameObject welcomeMessage;
+    public GameObject UI;
 
     public Dialogue dialogue;
    
@@ -28,6 +29,11 @@ public class Interaction : MonoBehaviour
             dialogueBoxIsActive = true;
             welcomeMessage.SetActive(false);
             TriggerDialogue();
+            if (FindObjectOfType<Combat>().selectedWeapon == Combat.weapons.None)
+                FindObjectOfType<Combat>().WeaponSelect(1);
+            FindObjectOfType<Movement>().lockMovement = true;
+            FindObjectOfType<Movement>().GetComponent<Animator>().SetInteger("state", 0);
+            UI.SetActive(false);
         }
 
         if (dialogueBoxIsActive)
