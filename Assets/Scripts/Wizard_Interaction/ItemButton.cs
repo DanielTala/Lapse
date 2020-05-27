@@ -52,9 +52,9 @@ public class ItemButton : MonoBehaviour
         {
             timer.currentTime -= 25f;
             combat.WeaponSelect(2);
+            purchaseDisp.displayPurchase("a Sword and Shield");
         }
         SAndSCanceled();
-        purchaseDisp.displayPurchase("a Sword and Shield");
     }
 
     public void BroadswordPurchased()
@@ -66,9 +66,9 @@ public class ItemButton : MonoBehaviour
         {
             timer.currentTime -= 30f;
             combat.WeaponSelect(4);
+            purchaseDisp.displayPurchase("a Broadsword");
         }
         BroadswordCanceled();
-        purchaseDisp.displayPurchase("a Broadsword");
     }
 
     public void DaggerPurchased()
@@ -80,9 +80,9 @@ public class ItemButton : MonoBehaviour
         {
             timer.currentTime -= 25f;
             combat.WeaponSelect(3);
+            purchaseDisp.displayPurchase("a Dagger");
         }
         DaggerCanceled();
-        purchaseDisp.displayPurchase("a Dagger");
     }
 
 
