@@ -48,12 +48,11 @@ public class Movement : MonoBehaviour
 
         if (teleport && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(1);
+            FindObjectOfType<Loader>().loadlevel(1);
         }
 
 
     }
-
     private void FixedUpdate()
     {
         if (boost == false)

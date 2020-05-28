@@ -12,6 +12,7 @@ public class DialogueBoxButtons : MonoBehaviour
     public GameObject shopButton;
     public GameObject exitButton;
     public GameObject nextButton;
+    public GameObject UI;
 
 
     public void ShopButton()
@@ -29,5 +30,7 @@ public class DialogueBoxButtons : MonoBehaviour
         shopButton.SetActive(false);
         exitButton.SetActive(false);
         nextButton.SetActive(true);
+        FindObjectOfType<Movement>().lockMovement = false;
+        UI.SetActive(true);
     }
 }

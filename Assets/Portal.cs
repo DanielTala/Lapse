@@ -14,13 +14,15 @@ public class Portal : MonoBehaviour
     {
         if (portal==true && Input.GetKeyDown(KeyCode.E))
         {
-           
-            SceneManager.LoadScene(1);
+
+            FindObjectOfType<Loader>().loadlevel(1);
+            //SceneManager.LoadScene(1);
         }
         if (portal == true && Input.GetKeyDown(KeyCode.E) && stage1f==true)
         {
 
-            SceneManager.LoadScene(3);
+            FindObjectOfType<Loader>().loadlevel(3);
+           // SceneManager.LoadScene(3);
         }
 
     }
