@@ -13,10 +13,10 @@ public class DialogueManager : MonoBehaviour
     public GameObject shopButton;
     public GameObject exitButton;
     public GameObject nextButton;
-
+    public bool timeAdd;
     public GameObject portal;
     public bool interacted;
-
+    private int scene;
     private void Start()
     {
         interacted = false;
@@ -57,7 +57,13 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-
+        scene = SceneManager.GetActiveScene().buildIndex;
+        if (timeAdd == false && scene == 2)
+        {
+            Timer timer = FindObjectOfType<Timer>();
+            timer.currentTime += 140;
+            timeAdd = true;
+        }
         shopButton.SetActive(true);
         nextButton.SetActive(false);
         exitButton.SetActive(true);
