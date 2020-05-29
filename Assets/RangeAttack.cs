@@ -19,21 +19,25 @@ public class RangeAttack : MonoBehaviour
 
     void Update()
     {
-
-
-        if (timeBtwShots <= 0)
+        if (Vector2.Distance(transform.position, target.position) < AttackRadius)
         {
+            if (target.position.x > transform.position.x)
+                GetComponent<SpriteRenderer>().flipX = true;
+            else if (target.position.x < transform.position.x)
+                GetComponent<SpriteRenderer>().flipX = false;
 
-            if (Vector2.Distance(transform.position, target.position) < AttackRadius)
+            if (timeBtwShots <= 0)
             {
 
-                Shoot();
-                timeBtwShots = startTimeBtwShots;
+                if (Vector2.Distance(transform.position, target.position) < AttackRadius)
+                {
+                    timeBtwShots = startTimeBtwShots;
+                    GetComponent<Animator>().Play("Slime_Attacking", 0, 0f);
 
+                }
             }
         }
-        else
-            timeBtwShots -= Time.deltaTime;
+        timeBtwShots -= Time.deltaTime;
     }
 
     void Shoot()

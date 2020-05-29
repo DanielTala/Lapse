@@ -58,17 +58,23 @@ public class Melee : MonoBehaviour
         damageCooldown -= Time.deltaTime;
         if (Vector2.Distance(transform.position, target.position) > stoppingDistance && Vector2.Distance(transform.position, target.position) <= chaseRadius&&!GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Slime_Attacking"))
         {
+
             if (target.position.x > transform.position.x)
-            {
                 GetComponent<SpriteRenderer>().flipX = true;
-            }
             else if (target.position.x < transform.position.x)
-            {
                 GetComponent<SpriteRenderer>().flipX = false;
-            }
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        if (Vector2.Distance(transform.position, target.position) <= stoppingDistance &&damageCooldown<=0)
+        else if (Vector2.Distance(transform.position, target.position) < retreatRadius)
+        {
+            if (target.position.x > transform.position.x)
+                GetComponent<SpriteRenderer>().flipX = false;
+            else if (target.position.x < transform.position.x)
+                GetComponent<SpriteRenderer>().flipX = true;
+
+            transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
+        }
+        if (Vector2.Distance(transform.position, target.position) <= stoppingDistance &&damageCooldown<=0 && GetComponent<RangeAttack>() == false)
         {
         damageCooldown = damageInterval;
             GetComponent<Animator>().Play("Slime_Attacking", 0, 0f);
