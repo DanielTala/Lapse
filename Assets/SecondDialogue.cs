@@ -2,44 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+public class SecondDialogue : MonoBehaviour
 {
+    public Dialogue dialogue2;
 
-    
     public Transform boxSpawn;
 
     public GameObject dialogueBox;
     public GameObject shopButton;
     public GameObject exitButton;
     public GameObject nextButton;
-    public GameObject welcomeMessage;
     public GameObject UI;
-    public GameObject wizardImage;
-    public GameObject wizardImageNormal;
 
 
-    public Dialogue dialogue;
-   
     private bool dialogueBoxIsActive = false;
     private bool playerInRange = false;
 
     void Update()
     {
-       
+
         if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
         {
             FindObjectOfType<DialogueManager>().interacted = true;
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;
             TriggerDialogue();
-            if (welcomeMessage)
-            welcomeMessage.SetActive(false);
             if (FindObjectOfType<Combat>().selectedWeapon == Combat.weapons.None)
                 FindObjectOfType<Combat>().WeaponSelect(1);
             FindObjectOfType<Movement>().lockMovement = true;
             FindObjectOfType<Movement>().GetComponent<Animator>().SetInteger("state", 0);
             UI.SetActive(false);
-            
+
         }
 
         if (dialogueBoxIsActive)
@@ -47,7 +40,7 @@ public class Interaction : MonoBehaviour
             dialogueBoxIsActive = false;
         }
 
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,15 +55,13 @@ public class Interaction : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            playerInRange = false;          
+            playerInRange = false;
         }
     }
 
-
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager2>().StartDialogue(dialogue2);
     }
 
-    
 }

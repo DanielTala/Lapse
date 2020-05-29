@@ -33,8 +33,11 @@ public class EnemyFinder : MonoBehaviour
             movement.prespawn = true;
             if (timer >=4f)
             {
-
                 FindObjectOfType<Loader>().loadlevel(2);
+                FindObjectOfType<DialogueManager>().shopButton.SetActive(false);
+                FindObjectOfType<DialogueManager>().nextButton.SetActive(true);
+                FindObjectOfType<DialogueManager>().exitButton.SetActive(false);
+                
             }
             
             if (SceneManager.GetActiveScene().buildIndex==1)

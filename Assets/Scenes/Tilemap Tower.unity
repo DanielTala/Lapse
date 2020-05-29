@@ -2561,13 +2561,15 @@ MonoBehaviour:
   nextButton: {fileID: 138010984}
   welcomeMessage: {fileID: 1407754311}
   UI: {fileID: 1053095766}
+  wizardImage: {fileID: 0}
+  wizardImageNormal: {fileID: 624178294}
   dialogue:
     sentences:
     - "Slimes are rampaging the outskirts of town. I\u2019ll leave you to take care
       of them."
     - "To start things off, here's a \u2018Sword\u2019. This weapon will aid you
       in combat."
-    - "I\u2019ll provide you 80 seconds to finish the first mission. I could also
+    - "I\u2019ll provide you 120 seconds to finish the first mission. I could also
       provide you valuable items to strengthen your capabilities but that will shorten
       your time for your mission. Choose wisely."
     - "Once you\u2019re ready head to the portal."
@@ -4270,6 +4272,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611089910}
   m_CullTransparentMesh: 0
+--- !u!1 &624178294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624178295}
+  - component: {fileID: 624178297}
+  - component: {fileID: 624178296}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &624178295
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624178294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1152114093}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -346, y: 60}
+  m_SizeDelta: {x: -696.0764, y: 104.06552}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &624178296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624178294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7f9c4f10e75e3b14e827f1f8ba72f51b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &624178297
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624178294}
+  m_CullTransparentMesh: 0
 --- !u!1 &647879420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,9 +4929,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wizardShop: {fileID: 1313830658}
   dialogueBox: {fileID: 1152114092}
-  shopButton: {fileID: 441874333}
-  exitButton: {fileID: 2030604912}
-  nextButton: {fileID: 138010984}
   UI: {fileID: 1053095766}
 --- !u!114 &775401621
 MonoBehaviour:
@@ -4901,7 +4974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sAndSInfo: {fileID: 9911547}
   broadswordInfo: {fileID: 1734319417}
-  daggerInfo: {fileID: 1681647615}
   HPInfo: {fileID: 1415920337}
   SPInfo: {fileID: 1273078423}
   purchaseDisp: {fileID: 1007136309}
@@ -7051,6 +7123,7 @@ RectTransform:
   - {fileID: 138010985}
   - {fileID: 2030604913}
   - {fileID: 595847611}
+  - {fileID: 624178295}
   m_Father: {fileID: 1444242442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8390,7 +8463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272.6, y: 59.979996}
+  m_AnchoredPosition: {x: -255.6, y: 54.980003}
   m_SizeDelta: {x: 30.999855, y: 28.202961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347296310
@@ -8554,6 +8627,7 @@ MonoBehaviour:
   shopButton: {fileID: 441874333}
   exitButton: {fileID: 2030604912}
   nextButton: {fileID: 138010984}
+  timeAdd: 0
   portal: {fileID: 813004705}
   interacted: 0
 --- !u!4 &1407719167
@@ -9581,7 +9655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1535897166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12525,7 +12599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273, y: 118}
+  m_AnchoredPosition: {x: -256, y: 113}
   m_SizeDelta: {x: 30.999855, y: 28.680847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128876594

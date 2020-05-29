@@ -7,7 +7,6 @@ public class ItemButton : MonoBehaviour
 
     public GameObject sAndSInfo;
     public GameObject broadswordInfo;
-    public GameObject daggerInfo;
     public GameObject HPInfo;
     public GameObject SPInfo;
     public FadingNotif purchaseDisp;
@@ -28,10 +27,6 @@ public class ItemButton : MonoBehaviour
         broadswordInfo.SetActive(true);
     }
 
-    public void DaggerClicked()
-    {
-        daggerInfo.SetActive(true);
-    }
 
     public void HPClicked()
     {
@@ -71,21 +66,6 @@ public class ItemButton : MonoBehaviour
         BroadswordCanceled();
     }
 
-    public void DaggerPurchased()
-    {
-        Combat combat = FindObjectOfType<Combat>();
-        Timer timer = FindObjectOfType<Timer>();
-        Debug.Log("Item purchase");
-        if (timer.currentTime >= 25f && combat.weaponNumber != 3)
-        {
-            timer.currentTime -= 25f;
-            combat.WeaponSelect(3);
-            purchaseDisp.displayPurchase("a Dagger");
-        }
-        DaggerCanceled();
-    }
-
-
     public void HPPurchased()
     {
         Timer timer = FindObjectOfType<Timer>();
@@ -121,11 +101,6 @@ public class ItemButton : MonoBehaviour
     public void BroadswordCanceled()
     {
         broadswordInfo.SetActive(false);
-    }
-
-    public void DaggerCanceled()
-    {
-        daggerInfo.SetActive(false);
     }
 
     public void HPCanceled()
