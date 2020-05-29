@@ -33,7 +33,8 @@ public class EnemyFinder : MonoBehaviour
             movement.prespawn = true;
             if (timer >=4f)
             {
-                SceneManager.LoadScene(2);
+
+                FindObjectOfType<Loader>().loadlevel(2);
             }
             
             if (SceneManager.GetActiveScene().buildIndex==1)

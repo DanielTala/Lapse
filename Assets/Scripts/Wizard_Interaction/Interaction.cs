@@ -25,8 +25,10 @@ public class Interaction : MonoBehaviour
        
         if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
         {
+            FindObjectOfType<DialogueManager>().interacted = true;
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;
+            if(welcomeMessage)
             welcomeMessage.SetActive(false);
             TriggerDialogue();
             if (FindObjectOfType<Combat>().selectedWeapon == Combat.weapons.None)

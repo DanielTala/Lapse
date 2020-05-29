@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Stage2Objective : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-            SceneManager.LoadScene(2);
+        if (collision.gameObject.tag == "Player" && Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("S2");
+            FindObjectOfType<Movement>().prespawn = true;
+            FindObjectOfType<Loader>().loadlevel(2);
+            this.gameObject.SetActive(false);
+        }
     }
 }

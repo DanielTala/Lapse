@@ -12,17 +12,20 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        if (portal==true && Input.GetKeyDown(KeyCode.E))
+        if (FindObjectOfType<DialogueManager>().interacted == true)
         {
+            if (portal == true && Input.GetKeyDown(KeyCode.E))
+            {
 
-            FindObjectOfType<Loader>().loadlevel(1);
-            //SceneManager.LoadScene(1);
-        }
-        if (portal == true && Input.GetKeyDown(KeyCode.E) && stage1f==true)
-        {
+                FindObjectOfType<Loader>().loadlevel(1);
+                //SceneManager.LoadScene(1);
+            }
+            if (portal == true && Input.GetKeyDown(KeyCode.E) && stage1f == true)
+            {
 
-            FindObjectOfType<Loader>().loadlevel(3);
-           // SceneManager.LoadScene(3);
+                FindObjectOfType<Loader>().loadlevel(3);
+                // SceneManager.LoadScene(3);
+            }
         }
 
     }

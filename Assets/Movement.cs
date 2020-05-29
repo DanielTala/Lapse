@@ -67,7 +67,10 @@ public class Movement : MonoBehaviour
         GameObject spawn = GameObject.FindGameObjectWithTag("Spawn");
         if (prespawn == true)
         {
-            rb.MovePosition(spawn.transform.position);
+            Vector3 spwn = spawn.transform.position;
+            spwn.z = 0;
+            transform.position = spwn;
+            if(transform.position == spwn)
             prespawn = false;
         }
     }

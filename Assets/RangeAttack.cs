@@ -42,6 +42,12 @@ public class RangeAttack : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+        Vector3 targ = target.transform.position;
+
+        Vector3 objectPos = transform.position;
+        targ= targ - objectPos;
+        targ.z = 0f;
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+        Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(new Vector3(0, 0, angle+90)));
     }
 }

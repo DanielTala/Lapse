@@ -36,5 +36,6 @@ public class Loader : MonoBehaviour
         yield return new WaitForSeconds(2);
         loadingScreen.blocksRaycasts = false;
         loadingScreen.alpha = 0;
+        bar.value = 0;
     }
 }

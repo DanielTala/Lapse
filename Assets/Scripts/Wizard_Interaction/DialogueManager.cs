@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,16 +15,26 @@ public class DialogueManager : MonoBehaviour
     public GameObject nextButton;
 
     public GameObject portal;
+    public bool interacted;
 
     private void Start()
     {
+        interacted = false;
         sentences = new Queue<string>();
     }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        interacted = false;
 
+    }
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
-
+        interacted = true;
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
