@@ -83,7 +83,7 @@ public class ItemButton : MonoBehaviour
     {
         Timer timer = FindObjectOfType<Timer>();
         Debug.Log("Item purchase");
-        if (inv.SPCount < 2)
+        if (inv.SPCount < 3)
         {
             inv.SPCount++;
             inv.SPDisp.gameObject.SetActive(true);

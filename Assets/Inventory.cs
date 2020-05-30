@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
     }
     public void addSPPotion()
     {
-        if (SPCount < 2)
+        if (SPCount <2)
         {
             SPCount++;
             SPDisp.gameObject.SetActive(true);

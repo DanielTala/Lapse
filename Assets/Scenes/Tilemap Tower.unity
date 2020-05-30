@@ -3970,11 +3970,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tips:
     sentences:
-    - Tip 1
-    - Tip 2
-    - Tip 3
-    - Tip 4
-    - Tip 5
+    - Monsters hit hard. For real.
+    - Potions, you'll need them.
+    - 'Always check the minimap. '
+    - The wizard knows best.
+    - Don't be a scarecrow, kite.
   loadingScreen: {fileID: 560852636}
   bar: {fileID: 336533266}
   tipDisplay: {fileID: 1315904932}
