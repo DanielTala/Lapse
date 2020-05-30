@@ -35,6 +35,8 @@ public class Combat : MonoBehaviour
     public float maxhealth;
     public int weaponNumber;
 
+    public AudioClip sword,broadsword;
+
     //protected AnimatorOverrideController AOC;
 
     public void WeaponSelect(int index)
@@ -215,6 +217,10 @@ public class Combat : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && attackCooldown <= 0 && selectedWeapon != weapons.None)
         {
             GetComponent<Animator>().Play("Player_Attacking", 0, 0f);
+            if (selectedWeapon == weapons.Sword || selectedWeapon == weapons.SwordShield)
+                GetComponent<AudioSource>().PlayOneShot(sword);
+            if (selectedWeapon == weapons.Broadsword)
+                GetComponent<AudioSource>().PlayOneShot(broadsword);
             attackCooldown = 1f / attacksPerSecond;
         }
         if(Input.GetKeyDown(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
@@ -234,7 +240,7 @@ public class Combat : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(0);
+            FindObjectOfType<Loader>().loadlevel(1);
         }
 
     }

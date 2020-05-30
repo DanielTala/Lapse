@@ -26,26 +26,27 @@ public class EnemyFinder : MonoBehaviour
 
 
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        if(objects.Length==0)
+        if (objects.Length == 0)
         {
-            win.SetActive(true);
-            timer += 1 *Time.deltaTime;
+            timer += 1 * Time.deltaTime;
             movement.prespawn = true;
-            if (timer >=4f)
+            if (timer >= 4f && win.activeInHierarchy == false)
             {
-                FindObjectOfType<Loader>().loadlevel(2);
+                win.SetActive(true);
+                FindObjectOfType<Loader>().loadlevel(3);
                 FindObjectOfType<DialogueManager>().shopButton.SetActive(false);
                 FindObjectOfType<DialogueManager>().nextButton.SetActive(true);
                 FindObjectOfType<DialogueManager>().exitButton.SetActive(false);
-                
+
             }
-            
-            if (SceneManager.GetActiveScene().buildIndex==1)
+
+
+            if (SceneManager.GetActiveScene().buildIndex == 2)
             {
                 portal.Stage1Finish();
             }
-
-          
         }
+
     }
 }
+

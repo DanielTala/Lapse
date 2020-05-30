@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 6ee3b6f37a772cf469c4919907d83502
+  - enabled: 1
     path: Assets/Scenes/Tilemap Tower.unity
     guid: 0cce181f08635d0478a85e1fa8ec9379
   - enabled: 1

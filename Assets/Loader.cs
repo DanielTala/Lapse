@@ -26,6 +26,16 @@ public class Loader : MonoBehaviour
         AsyncOperation oper = SceneManager.LoadSceneAsync(index);
         while (!oper.isDone)
         {
+            if(!FindObjectOfType<BGMChanger>().crossfade.isPlaying)
+            {
+                if (index == 1 || index == 3)
+                    FindObjectOfType<BGMChanger>().ChangeBGM(1);
+                if (index == 2)
+                    FindObjectOfType<BGMChanger>().ChangeBGM(2);
+                if (index == 4)
+                    FindObjectOfType<BGMChanger>().ChangeBGM(3);
+
+            }
             float pr = Mathf.Clamp01(oper.progress / 0.9f);
             bar.value = pr;
             tipDisplay.color = new Color(1, 1, 1, Mathf.PingPong(1.5f, 1f) + 0.5f);

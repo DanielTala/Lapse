@@ -29,15 +29,15 @@ public class Timer : MonoBehaviour
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
         countdownText.text = currentTime.ToString("0");
 
-        if (scene == 1 && objects.Length!=0)
+        if (scene == 2 && objects.Length!=0)
         {
             currentTime -= 1 * Time.deltaTime;
         }
-        if (scene == 1 && objects.Length==0)
+        if (scene == 2 && objects.Length==0)
         {
             startingTime = currentTime;
         }
-        if (scene == 3 && objects.Length != 0)
+        if (scene == 4 && objects.Length != 0)
         {
             currentTime -= 1 * Time.deltaTime;
         }
@@ -49,7 +49,8 @@ public class Timer : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >=4f)
             {
-                SceneManager.LoadScene(0);
+
+                FindObjectOfType<Loader>().loadlevel(1);
             }
         }
     }

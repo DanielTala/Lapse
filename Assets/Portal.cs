@@ -17,13 +17,13 @@ public class Portal : MonoBehaviour
             if (portal == true && Input.GetKeyDown(KeyCode.E))
             {
 
-                FindObjectOfType<Loader>().loadlevel(1);
+                FindObjectOfType<Loader>().loadlevel(2);
                 //SceneManager.LoadScene(1);
             }
             if (portal == true && Input.GetKeyDown(KeyCode.E) && stage1f == true)
             {
 
-                FindObjectOfType<Loader>().loadlevel(3);
+                FindObjectOfType<Loader>().loadlevel(4);
                 // SceneManager.LoadScene(3);
             }
         }

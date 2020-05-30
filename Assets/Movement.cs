@@ -44,12 +44,14 @@ public class Movement : MonoBehaviour
                 GetComponent<SpriteRenderer>().flipX = false;
             }
         }
-
-
-        if (teleport && Input.GetKeyDown(KeyCode.E))
+        else
         {
-            FindObjectOfType<Loader>().loadlevel(1);
+            movement.x = 0;
+            movement.y = 0;
         }
+
+
+        
 
 
     }

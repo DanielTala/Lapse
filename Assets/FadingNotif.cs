@@ -16,7 +16,7 @@ public class FadingNotif : MonoBehaviour
     {
         if (GetComponent<TextMeshProUGUI>().color.a > 0)
         {
-            GetComponent<TextMeshProUGUI>().color -= new Color(0, 0, 0, 1) * Time.deltaTime*2;
+            GetComponent<TextMeshProUGUI>().color -= new Color(0, 0, 0, 1) * Time.deltaTime*4;
             transform.localScale += Vector3.one*Time.deltaTime;
         }
         else
