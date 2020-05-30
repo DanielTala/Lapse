@@ -104,6 +104,7 @@ MonoBehaviour:
   retreatRadius: 0
   damage: 2
   damageInterval: 0.5
+  damageImmunity: 0
 --- !u!114 &7490830902584265100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 7490830904054287356}
   health: 30
+  damageImmunity: 0
 --- !u!61 &7490830902584265072
 BoxCollider2D:
   m_ObjectHideFlags: 0

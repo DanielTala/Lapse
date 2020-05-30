@@ -28,7 +28,7 @@ public class Loader : MonoBehaviour
         {
             if(!FindObjectOfType<BGMChanger>().crossfade.isPlaying)
             {
-                if (index == 1 || index == 3)
+                if (index == 1 || index == 3 || index == 5)
                     FindObjectOfType<BGMChanger>().ChangeBGM(1);
                 if (index == 2)
                     FindObjectOfType<BGMChanger>().ChangeBGM(2);

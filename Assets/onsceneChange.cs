@@ -17,7 +17,7 @@ public class onsceneChange : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Tilemap Tower(Stage)")
+        if (scene.name == "Tilemap Tower(Stage)"|| scene.name == "Tilemap Tower(Ending)")
         {
             FindObjectOfType<Interaction>().dialogueBox = dialogueBox;
             FindObjectOfType<Interaction>().shopButton = shopButton;

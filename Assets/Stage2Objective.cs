@@ -11,7 +11,7 @@ public class Stage2Objective : MonoBehaviour
         {
             Debug.Log("S2");
             FindObjectOfType<Movement>().prespawn = true;
-            FindObjectOfType<Loader>().loadlevel(3);
+            FindObjectOfType<Loader>().loadlevel(5);
             this.gameObject.SetActive(false);
         }
     }

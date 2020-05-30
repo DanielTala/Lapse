@@ -27,8 +27,8 @@ public class Movement : MonoBehaviour
         if (!lockMovement)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        
+            movement.y = Input.GetAxisRaw("Vertical");
+
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
                 GetComponent<Animator>().SetInteger("state", 1);
             else

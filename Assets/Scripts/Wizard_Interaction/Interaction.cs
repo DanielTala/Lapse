@@ -28,15 +28,17 @@ public class Interaction : MonoBehaviour
        
         if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
         {
+            FindObjectOfType<Movement>().enabled = false;
             FindObjectOfType<DialogueManager>().interacted = true;
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;
             TriggerDialogue();
             if (welcomeMessage)
             welcomeMessage.SetActive(false);
+            if (FindObjectOfType<DisplayText>())
+                FindObjectOfType<DisplayText>().gameObject.SetActive(false);
             if (FindObjectOfType<Combat>().selectedWeapon == Combat.weapons.None)
                 FindObjectOfType<Combat>().WeaponSelect(1);
-            FindObjectOfType<Movement>().lockMovement = true;
             FindObjectOfType<Movement>().GetComponent<Animator>().SetInteger("state", 0);
             UI.SetActive(false);
             
