@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -357,11 +357,13 @@ MonoBehaviour:
   nextButton: {fileID: 0}
   welcomeMessage: {fileID: 0}
   UI: {fileID: 0}
+  wizardImage: {fileID: 0}
+  wizardImageNormal: {fileID: 0}
   dialogue:
     sentences:
     - Excellent work. Next, I need you to look for my orb.
     - Located far east of the forest, deep within the graveyard.
-    - "I can only provide you 100 seconds. Make sure not to waste time, we\u2019ll
+    - "I will provide you 140 seconds more. Make sure not to waste time, we\u2019ll
       need every second of it."
     - Best of luck hero.
 --- !u!61 &274043054

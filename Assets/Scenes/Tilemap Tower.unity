@@ -2454,10 +2454,10 @@ MonoBehaviour:
       of them."
     - "To start things off, here's a \u2018Sword\u2019. This weapon will aid you
       in combat."
-    - "I\u2019ll provide you 120 seconds to finish the first mission. I could also
-      provide you valuable items to strengthen your capabilities but that will shorten
-      your time for your mission. Choose wisely."
-    - "Once you\u2019re ready head to the portal."
+    - "I\u2019ll provide you 120 seconds to finish the first mission. "
+    - I could also provide you valuable items to strengthen your capabilities but
+      that will shorten your time for your mission. Choose wisely.
+    - Once you're ready, head to the portal.
 --- !u!61 &274043054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3530,13 +3530,16 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -Instantly heals 20 HP
+  m_Text: ' - Instantly heals 20 HP
+
+
+    Max. 5 Potions'
 --- !u!222 &508291181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4156,8 +4159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.4, y: -7.9}
-  m_SizeDelta: {x: 682.62085, y: 128.39133}
+  m_AnchoredPosition: {x: 130.38, y: 0.65}
+  m_SizeDelta: {x: 637.3898, y: 68.30455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595847612
 MonoBehaviour:
@@ -4180,18 +4183,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c111f350bd9ab6441a59f65ef2eda897, type: 3}
-    m_FontSize: 27
+    m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 30
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Display text here.
+  m_Text: 
 --- !u!222 &595847613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8493,7 +8496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b98001b3f1381d34bbb79ebf01e2a6ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8513,8 +8516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407754311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: 5.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.06, y: 12.26, z: 0}
+  m_LocalScale: {x: 0.68586, y: 0.68586, z: 0.68586}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -9434,8 +9437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -53.4}
-  m_SizeDelta: {x: 169.05649, y: 78.93182}
+  m_AnchoredPosition: {x: 1.4, y: -56.5}
+  m_SizeDelta: {x: 233.00412, y: 92.86594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494148635
 MonoBehaviour:
@@ -9460,17 +9463,17 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: c111f350bd9ab6441a59f65ef2eda897, type: 3}
     m_FontSize: 15
     m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 3
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 15
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " - Short range\n - Normal damage\n - Normal attack speed\n - Can block
-    some damage"
+  m_Text: " - Short range      \n - Normal damage and attack speed\n - Can block
+    some damage \n(CTRL) key to block\n "
 --- !u!222 &1494148636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9531,7 +9534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1535897166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11259,8 +11262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000032424927, y: -53.399975}
-  m_SizeDelta: {x: 172.9552, y: 80.75212}
+  m_AnchoredPosition: {x: 1.4, y: -55.483}
+  m_SizeDelta: {x: 192.2887, y: 99.09709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813473976
 MonoBehaviour:
@@ -11283,18 +11286,22 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c111f350bd9ab6441a59f65ef2eda897, type: 3}
-    m_FontSize: 15
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Allows you to move at 1.5x Movement speed for 10 seconds'
+  m_Text: '- Allows you to move at 1.5x Movement speed for 10 seconds
+
+
+    Max.
+    3 Potions'
 --- !u!222 &1813473977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11831,8 +11838,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000032424927, y: -53.399975}
-  m_SizeDelta: {x: 172.9552, y: 80.75212}
+  m_AnchoredPosition: {x: -0.000020027, y: -49.549}
+  m_SizeDelta: {x: 206.00397, y: 99.09706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004827730
 MonoBehaviour:
@@ -11855,12 +11862,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c111f350bd9ab6441a59f65ef2eda897, type: 3}
-    m_FontSize: 15
+    m_FontSize: 18
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

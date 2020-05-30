@@ -215,7 +215,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &238005
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -4510,7 +4510,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &119809197
@@ -7691,7 +7691,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -16368,7 +16368,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &445052539
@@ -16891,7 +16891,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -17858,7 +17858,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -18975,7 +18975,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -22357,7 +22357,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -24730,7 +24730,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &675493909
@@ -25418,7 +25418,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -25602,7 +25602,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -29873,7 +29873,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &848323606
@@ -30856,7 +30856,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &866582045
@@ -34117,7 +34117,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &931709867
@@ -38904,7 +38904,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -39520,7 +39520,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -40038,7 +40038,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -40222,7 +40222,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -42152,7 +42152,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -42763,7 +42763,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -44621,7 +44621,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -46076,7 +46076,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!61 &1224358737
@@ -46383,7 +46383,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1242539025
@@ -49567,7 +49567,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -51931,7 +51931,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1379311271
@@ -52097,7 +52097,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1386978205
@@ -77821,7 +77821,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1533820815
@@ -78356,7 +78356,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -78540,7 +78540,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1561825695
@@ -80363,7 +80363,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1612335916
@@ -80817,7 +80817,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1620562081
@@ -82498,7 +82498,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -82682,7 +82682,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
@@ -83183,7 +83183,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1695238699
@@ -83718,7 +83718,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1702764376
@@ -85153,7 +85153,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1750564082
@@ -90197,7 +90197,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1791633471
@@ -91466,7 +91466,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1825362291
@@ -93625,7 +93625,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1862062862
@@ -97431,7 +97431,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1928278813
@@ -98069,7 +98069,7 @@ MonoBehaviour:
   stoppingDistance: 3
   chaseRadius: 12
   retreatRadius: 0
-  damage: 16
+  damage: 10
   damageInterval: 1.25
   damageImmunity: 0
 --- !u!212 &1941637221
@@ -106888,7 +106888,7 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 10
   chaseRadius: 16
-  retreatRadius: 5
+  retreatRadius: 3
   damage: 0
   damageInterval: 0
   damageImmunity: 0
