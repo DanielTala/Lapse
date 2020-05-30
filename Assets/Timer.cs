@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    public  float currentTime = 0f;
-    public  float startingTime = 60f;
+    public float currentTime;
+    public float startingTime;
     private int scene;
     private float timer;
     public GameObject lose;
@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
         {
             currentTime -= 1 * Time.deltaTime;
         }
-        if (scene == 2 && objects.Length==0)
+        if (scene == 2 && objects.Length == 0)
         {
             startingTime = currentTime;
         }
@@ -46,11 +46,12 @@ public class Timer : MonoBehaviour
         {
             lose.SetActive(true);
             
-            timer += Time.deltaTime;
+            timer += Time.deltaTime; 
+            FindObjectOfType<Loader>().loadlevel(1);
             if (timer >=4f)
             {
 
-                FindObjectOfType<Loader>().loadlevel(1);
+                
             }
         }
     }

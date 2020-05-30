@@ -26,6 +26,9 @@ public class onsceneChange : MonoBehaviour
             FindObjectOfType<Interaction>().UI = UI;
             FindObjectOfType<Movement>().prespawn = true;
         }
-
+        if (scene.buildIndex ==5)
+        {
+            shopButton.SetActive(false);
+        }
     }
 }

@@ -33,6 +33,13 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue)
     {
+        scene = SceneManager.GetActiveScene().buildIndex;
+        if (timeAdd == false && scene == 3)
+        {
+            Timer timer = FindObjectOfType<Timer>();
+            timer.currentTime += 140;
+            timeAdd = true;
+        }
         sentences.Clear();
         interacted = true;
         foreach (string sentence in dialogue.sentences)
@@ -58,13 +65,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         scene = SceneManager.GetActiveScene().buildIndex;
-        if (timeAdd == false && scene == 2)
-        {
-            Timer timer = FindObjectOfType<Timer>();
-            timer.currentTime += 140;
-            timeAdd = true;
-        }
-        shopButton.SetActive(true);
+                shopButton.SetActive(true);
         nextButton.SetActive(false);
         exitButton.SetActive(true);
         portal.SetActive(true);
