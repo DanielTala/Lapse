@@ -23,7 +23,7 @@ public class Loader : MonoBehaviour
     }
     IEnumerator loadasync(int index)
     {
-        AsyncOperation oper = SceneManager.LoadSceneAsync(index);
+        AsyncOperation oper = SceneManager.LoadSceneAsync(index,LoadSceneMode.Single);
         while (!oper.isDone)
         {
             if(!FindObjectOfType<BGMChanger>().crossfade.isPlaying)

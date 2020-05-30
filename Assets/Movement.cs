@@ -67,13 +67,16 @@ public class Movement : MonoBehaviour
                 boost = false;
         }
         GameObject spawn = GameObject.FindGameObjectWithTag("Spawn");
-        if (prespawn == true)
+        if (spawn)
         {
-            Vector3 spwn = spawn.transform.position;
-            spwn.z = 0;
-            transform.position = spwn;
-            if(transform.position == spwn)
-            prespawn = false;
+            if (prespawn == true)
+            {
+                Vector3 spwn = spawn.transform.position;
+                spwn.z = 0;
+                transform.position = spwn;
+                if (transform.position == spwn)
+                    prespawn = false;
+            }
         }
     }
 

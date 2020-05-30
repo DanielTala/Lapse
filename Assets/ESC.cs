@@ -19,7 +19,12 @@ public class ESC : MonoBehaviour
         {
             screen.SetActive(true);
             FindObjectOfType<Movement>().enabled = false;
-            foreach(Melee abc in FindObjectsOfType<Melee>())
+            FindObjectOfType<Timer>().enabled = false;
+            foreach (Melee abc in FindObjectsOfType<Melee>())
+            {
+                abc.enabled = false;
+            }
+            foreach (RangeAttack abc in FindObjectsOfType<RangeAttack>())
             {
                 abc.enabled = false;
             }
@@ -29,7 +34,12 @@ public class ESC : MonoBehaviour
     {
         screen.SetActive(false);
         FindObjectOfType<Movement>().enabled = true;
+        FindObjectOfType<Timer>().enabled = true;
         foreach (Melee abc in FindObjectsOfType<Melee>())
+        {
+            abc.enabled = true;
+        }
+        foreach (RangeAttack abc in FindObjectsOfType<RangeAttack>())
         {
             abc.enabled = true;
         }
