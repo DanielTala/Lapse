@@ -19,13 +19,13 @@ public class layerChnge : MonoBehaviour
         if (target.position.y > transform.position.y+offset)
         {
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-            GetComponent<SpriteRenderer>().sortingOrder = 4;
+            GetComponent<SpriteRenderer>().sortingOrder = 15;
 
         }
         else
         {
             GetComponent<SpriteRenderer>().color = Color.white;
-            GetComponent<SpriteRenderer>().sortingOrder = 2;
+            GetComponent<SpriteRenderer>().sortingOrder = 5;
         }
     }
 }
