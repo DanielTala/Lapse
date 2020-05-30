@@ -6,10 +6,11 @@ public class layerChnge : MonoBehaviour
 {
     Transform target;
     public float offset;
+     int order;
     // Start is called before the first frame update
     void Start()
     {
-
+        order = GetComponent<SpriteRenderer>().sortingOrder;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -19,13 +20,14 @@ public class layerChnge : MonoBehaviour
         if (target.position.y > transform.position.y+offset)
         {
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-            GetComponent<SpriteRenderer>().sortingOrder = 15;
+
+            GetComponent<SpriteRenderer>().sortingOrder = order+20;
 
         }
         else
         {
             GetComponent<SpriteRenderer>().color = Color.white;
-            GetComponent<SpriteRenderer>().sortingOrder = 5;
+            GetComponent<SpriteRenderer>().sortingOrder = order;
         }
     }
 }
