@@ -14,6 +14,8 @@ public class SecondDialogue : MonoBehaviour
     public GameObject nextButton;
     public GameObject UI;
 
+    public Movement mov;
+
 
     private bool dialogueBoxIsActive = false;
     private bool playerInRange = false;
@@ -23,7 +25,7 @@ public class SecondDialogue : MonoBehaviour
 
         if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
         {
-            FindObjectOfType<Movement>().enabled = false;
+           mov.lockMovement = true;
             FindObjectOfType<DialogueManager>().interacted = true;
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;

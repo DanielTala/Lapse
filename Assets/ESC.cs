@@ -19,6 +19,7 @@ public class ESC : MonoBehaviour
         {
             screen.SetActive(true);
             FindObjectOfType<Movement>().enabled = false;
+            FindObjectOfType<Combat>().enabled = false;
             FindObjectOfType<Timer>().enabled = false;
             foreach (Melee abc in FindObjectsOfType<Melee>())
             {
@@ -34,6 +35,7 @@ public class ESC : MonoBehaviour
     {
         screen.SetActive(false);
         FindObjectOfType<Movement>().enabled = true;
+        FindObjectOfType<Combat>().enabled = true;
         FindObjectOfType<Timer>().enabled = true;
         foreach (Melee abc in FindObjectsOfType<Melee>())
         {

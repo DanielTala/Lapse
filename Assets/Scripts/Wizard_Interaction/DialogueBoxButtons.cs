@@ -12,6 +12,7 @@ public class DialogueBoxButtons : MonoBehaviour
 
     public GameObject UI;
     public GameObject ending;
+    public Movement mov;
 
 
     public void ShopButton()
@@ -23,7 +24,7 @@ public class DialogueBoxButtons : MonoBehaviour
     public void ExitButton()
     {
         dialogueBox.SetActive(false);
-        FindObjectOfType<Movement>().enabled = true;
+        mov.lockMovement = false;
         UI.SetActive(true);
         if(SceneManager.GetActiveScene().buildIndex == 5)
         {

@@ -11,7 +11,7 @@ public class ExitButton : MonoBehaviour
     public void ExitShop()
     {
         wizardShop.SetActive(false);
-        FindObjectOfType<Movement>().enabled = true;
+        FindObjectOfType<Movement>().lockMovement = false;
         UI.SetActive(true);
     }
 }

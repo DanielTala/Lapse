@@ -214,7 +214,7 @@ public class Combat : MonoBehaviour
     {
         attackCooldown -= Time.deltaTime;
         WeaponChange();
-        if (Input.GetKey(KeyCode.Space) && attackCooldown <= 0 && selectedWeapon != weapons.None)
+        if (Input.GetKey(KeyCode.Space) && attackCooldown <= 0 && selectedWeapon != weapons.None && !Input.GetKey(KeyCode.LeftControl))
         {
             GetComponent<Animator>().Play("Player_Attacking", 0, 0f);
             if (selectedWeapon == weapons.Sword || selectedWeapon == weapons.SwordShield)
@@ -223,18 +223,21 @@ public class Combat : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(broadsword);
             attackCooldown = 1f / attacksPerSecond;
         }
-        if(Input.GetKeyDown(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
-            GetComponent<Animator>().Play("Player_BlockingStart", 0, 0f);
-        if (Input.GetKey(KeyCode.LeftControl) &&selectedWeapon == weapons.SwordShield)
+        if (!Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Blocking");
-            GetComponent<Animator>().SetInteger("state", 4);
-            blocking = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
-        {
-            GetComponent<Animator>().Play("Player_BlockingEnd", 0, 0f);
-            blocking = false;
+            if (Input.GetKeyDown(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
+                GetComponent<Animator>().Play("Player_BlockingStart", 0, 0f);
+            if (Input.GetKey(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
+            {
+                Debug.Log("Blocking");
+                GetComponent<Animator>().SetInteger("state", 4);
+                blocking = true;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftControl) && selectedWeapon == weapons.SwordShield)
+            {
+                GetComponent<Animator>().Play("Player_BlockingEnd", 0, 0f);
+                blocking = false;
+            }
         }
         bar.transform.localScale = new Vector3(initial.x * (Health / maxhealth), initial.y, initial.z);
         if (Health <= 0)

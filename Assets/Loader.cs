@@ -26,7 +26,9 @@ public class Loader : MonoBehaviour
         AsyncOperation oper = SceneManager.LoadSceneAsync(index,LoadSceneMode.Single);
         while (!oper.isDone)
         {
-            if(!FindObjectOfType<BGMChanger>().crossfade.isPlaying)
+            if (FindObjectOfType<Movement>())
+                FindObjectOfType<Movement>().enabled = false;
+            if (!FindObjectOfType<BGMChanger>().crossfade.isPlaying)
             {
                 if (index == 1 || index == 3 || index == 5)
                     FindObjectOfType<BGMChanger>().ChangeBGM(1);
@@ -44,6 +46,7 @@ public class Loader : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(2);
+        FindObjectOfType<Movement>().enabled = true;
         loadingScreen.blocksRaycasts = false;
         loadingScreen.alpha = 0;
         bar.value = 0;

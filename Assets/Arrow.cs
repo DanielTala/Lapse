@@ -22,13 +22,34 @@ public class Arrow : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
     }
 
-    void Update()
+    bool blockCheck()
     {
-
+        Combat targetCombatScript = target.GetComponent<Combat>();
+        if (targetCombatScript.blocking == true)
+        {
+            if (targetCombatScript.attackDirection == Combat.directions.left)
+            {
+                if (target.transform.position.x > transform.position.x)
+                    return true;
+                else
+                    return false;
+            }
+            else if (targetCombatScript.attackDirection == Combat.directions.right)
+            {
+                if (target.transform.position.x < transform.position.x)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player"&& blockCheck()==false)
         {
             collision.gameObject.GetComponent<Combat>().Health -= damage;
             Destroy(gameObject);

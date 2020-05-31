@@ -16,6 +16,7 @@ public class Interaction : MonoBehaviour
     public GameObject UI;
     public GameObject wizardImage;
     public GameObject wizardImageNormal;
+    public Movement mov;
 
 
     public Dialogue dialogue;
@@ -28,7 +29,7 @@ public class Interaction : MonoBehaviour
        
         if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
         {
-            FindObjectOfType<Movement>().enabled = false;
+            mov.lockMovement = true;
             FindObjectOfType<DialogueManager>().interacted = true;
             dialogueBox.SetActive(true);
             dialogueBoxIsActive = true;

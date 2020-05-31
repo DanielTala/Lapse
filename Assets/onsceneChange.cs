@@ -10,6 +10,7 @@ public class onsceneChange : MonoBehaviour
     public GameObject exitButton;
     public GameObject nextButton;
     public GameObject UI;
+    public Movement mov;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -24,6 +25,9 @@ public class onsceneChange : MonoBehaviour
             FindObjectOfType<Interaction>().exitButton = exitButton;
             FindObjectOfType<Interaction>().nextButton = nextButton;
             FindObjectOfType<Interaction>().UI = UI;
+            FindObjectOfType<Interaction>().mov = mov;
+            FindObjectOfType<DialogueBoxButtons>().mov = mov;
+            FindObjectOfType<SecondDialogue>().mov = mov;
             FindObjectOfType<Movement>().prespawn = true;
         }
         if (scene.buildIndex ==5)
