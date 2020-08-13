@@ -92,7 +92,7 @@ public class Combat : MonoBehaviour
             }
             if (selectedWeapon == weapons.SwordShield)
             {
-                damage = 8f;
+                damage = 8.5f;
                 range = 4f;
                 attacksPerSecond = 1.5f;
                 topAngle = 20f;
