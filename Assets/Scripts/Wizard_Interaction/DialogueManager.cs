@@ -13,6 +13,10 @@ public class DialogueManager : MonoBehaviour
     public GameObject shopButton;
     public GameObject exitButton;
     public GameObject nextButton;
+    public GameObject highButton;
+
+    public Movement mov;
+
     public bool timeAdd;
     public GameObject portal;
     public bool interacted;
@@ -64,10 +68,16 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+
         scene = SceneManager.GetActiveScene().buildIndex;
                 shopButton.SetActive(true);
         nextButton.SetActive(false);
         exitButton.SetActive(true);
+
+        if(SceneManager.GetActiveScene().buildIndex!=1)
+        highButton.SetActive(true);
+
+ 
         portal.SetActive(true);
     }
 }

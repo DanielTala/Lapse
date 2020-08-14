@@ -26,20 +26,30 @@ public class Interaction : MonoBehaviour
 
     void Update()
     {
-       
-        if (!dialogueBoxIsActive && playerInRange && Input.GetButtonDown("Interact"))
+        mov = FindObjectOfType<Movement>();
+        if (dialogueBoxIsActive==false && playerInRange && Input.GetButtonDown("Interact"))
         {
+            Debug.Log("Pasok naman" );
+
             mov.lockMovement = true;
+
             FindObjectOfType<DialogueManager>().interacted = true;
+
             dialogueBox.SetActive(true);
+
             dialogueBoxIsActive = true;
+
             TriggerDialogue();
+
             if (welcomeMessage)
             welcomeMessage.SetActive(false);
+
             if (FindObjectOfType<DisplayText>())
                 FindObjectOfType<DisplayText>().gameObject.SetActive(false);
+
             if (FindObjectOfType<Combat>().selectedWeapon == Combat.weapons.None)
                 FindObjectOfType<Combat>().WeaponSelect(1);
+
             FindObjectOfType<Movement>().GetComponent<Animator>().SetInteger("state", 0);
             UI.SetActive(false);
             
@@ -48,6 +58,7 @@ public class Interaction : MonoBehaviour
         if (dialogueBoxIsActive)
         {
             dialogueBoxIsActive = false;
+            
         }
 
         
@@ -58,6 +69,7 @@ public class Interaction : MonoBehaviour
         if (collision.gameObject.name.Equals("Player"))
         {
             playerInRange = true;
+         
         }
     }
 

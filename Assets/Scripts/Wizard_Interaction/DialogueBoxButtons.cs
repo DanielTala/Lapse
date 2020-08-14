@@ -21,10 +21,14 @@ public class DialogueBoxButtons : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
+
+
     public void ExitButton()
     {
         dialogueBox.SetActive(false);
+        mov = FindObjectOfType<Movement>();
         mov.lockMovement = false;
+        
         UI.SetActive(true);
         if(SceneManager.GetActiveScene().buildIndex == 5)
         {

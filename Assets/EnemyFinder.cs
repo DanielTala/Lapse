@@ -25,7 +25,7 @@ public class EnemyFinder : MonoBehaviour
         Movement movement = FindObjectOfType<Movement>();
 
 
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        
         if (objects.Length == 0)
         {
             timer += 1 * Time.deltaTime;
