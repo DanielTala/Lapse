@@ -29,7 +29,7 @@ public class Interaction : MonoBehaviour
         mov = FindObjectOfType<Movement>();
         if (dialogueBoxIsActive==false && playerInRange && Input.GetButtonDown("Interact"))
         {
-            Debug.Log("Pasok naman" );
+            
 
             mov.lockMovement = true;
 

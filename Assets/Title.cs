@@ -43,5 +43,12 @@ public class Title : MonoBehaviour
                 fade = false;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            PlayerPrefs.DeleteKey("Highscore1");
+            PlayerPrefs.DeleteKey("Highscore2");
+            PlayerPrefs.DeleteKey("Highscore3");
+        }
     }
 }
